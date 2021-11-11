@@ -1,41 +1,73 @@
-.container {
-  border: 1px solid #a5a5a5;
-  padding: 20px;
-  max-width: 700px;
-  margin: 25px auto;
-  border-radius: 15px;
-}
-
 h1 {
-  font-size: 50px;
+  font-size: 40px;
   text-align: center;
   padding: 20px 20px 10px;
 }
 
 h2 {
+  font-size: 25px;
   font-weight: normal;
   text-align: center;
+  margin-bottom: 25px;
 }
 
-.weather-icon {
-  font-size: 80px;
-  text-align: center;
-}
-
-.temperature {
-  font-size: 90px;
-}
-
-.units {
-  position: relative;
-  top: -50px;
+ul {
+  margin: 0;
+  padding: 0;
 }
 
 li {
-  margin-top: 10px;
+  margin-bottom: 20px;
   list-style: none;
+  line-height: 8px;
+  font-size: 15px;
 }
 
 footer {
   text-align: center;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  border: 1px solid #a5a5a5;
+  padding: 20px;
+  max-width: 600px;
+  margin: 25px auto 10px;
+  border-radius: 15px;
+}
+
+.weather-icon {
+  font-size: 70px;
+  margin: 0 5px 20px;
+  padding: 0;
+  line-height: 50px;
+}
+
+.temperature {
+  font-size: 80px;
+  margin: 0 0 20px;
+  padding: 0;
+  line-height: 50px;
+}
+
+.units {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  top: -45px;
+}
+
+#celsius-link {
+  text-decoration-line: none;
+  color: black;
+}
+
+#fahrenheit-link {
+  text-decoration-line: none;
+  color: black;
+}
+
+#description:first-letter {
+  text-transform: capitalize;
 }
