@@ -21,6 +21,9 @@ li {
   list-style: none;
   line-height: 8px;
   font-size: 15px;
+}
+
+li:first-letter {
   text-transform: capitalize;
 }
 
