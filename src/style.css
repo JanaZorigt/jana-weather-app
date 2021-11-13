@@ -41,33 +41,40 @@ footer {
   border-radius: 15px;
 }
 
+/*
 .weather-icon {
   font-size: 70px;
   margin: 0 5px 20px;
   padding: 0;
   line-height: 50px;
 }
+*/
 
-.temperature {
+.temperature-unit .temperature {
   font-size: 80px;
   margin: 0 0 20px;
   padding: 0;
   line-height: 50px;
 }
 
-.units {
+.temperature-unit .units {
   margin: 0;
   padding: 0;
   position: relative;
   top: -45px;
+  text-decoration-line: none;
+}
+
+.temperature-unit .active {
+  color: black;
+  cursor: default;
+  text-decoration-line: none;
 }
 
 #celsius-link {
   text-decoration-line: none;
-  color: black;
 }
 
 #fahrenheit-link {
   text-decoration-line: none;
-  color: black;
 }
