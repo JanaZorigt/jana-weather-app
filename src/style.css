@@ -79,3 +79,20 @@ footer {
 #fahrenheit-link {
   text-decoration-line: none;
 }
+
+.weather-forecast {
+  text-align: center;
+}
+
+.weather-forecast-date {
+  font-size: 15px;
+  opacity: 0.8;
+}
+
+.weather-forecast-temperature {
+  font-size: 15px;
+}
+
+.weather-forecast-temperature-min {
+  opacity: 0.8;
+}
