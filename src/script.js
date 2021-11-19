@@ -25,6 +25,31 @@ function formatDate(timestamp) {
   return `${day} ${hour}:${minute}`;
 }
 
+function displayForecast() {
+  let days = ["Thu", "Fri", "Sat", "Sun", "Mon", "Tue"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="col-2">
+        <div class="weather-forecast-date">${day}</div>
+        <img
+          src="https://openweathermap.org/img/wn/04d@2x.png"
+          alt=""
+          width="42"
+        />
+        <div class="weather-forecast-temperature">
+          <span class="weather-forecast-temperature-max">25°</span>
+          <span class="weather-forecast-temperature-min">12°</span>
+        </div>
+      </div>`;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  document.querySelector("#forecast").innerHTML = forecastHTML;
+}
+
 function displayWeatherCondition(response) {
   document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
@@ -114,3 +139,5 @@ let celsiusLink = document.querySelector("#celsius-link");
 celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Chicago");
+
+displayForecast();
