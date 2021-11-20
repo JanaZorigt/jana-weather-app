@@ -67,8 +67,7 @@ function displayForecast(response) {
 
 function getForecast(coordinates) {
   let apiKey = "58d4db6a0d6b79cac80768197bced22d";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&units=imperial&appid=${apiKey}`;
 
   axios.get(apiUrl).then(displayForecast);
 }
@@ -97,15 +96,12 @@ function displayWeatherCondition(response) {
     .querySelector("#icon")
     .setAttribute("alt", response.data.weather[0].description);
 
-  celsiusTemperature = response.data.main.temp;
-
   getForecast(response.data.coord);
 }
 
 function searchCity(city) {
   let apiKey = "58d4db6a0d6b79cac80768197bced22d";
-  let units = "metric";
-  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${units}&appid=${apiKey}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
@@ -122,12 +118,10 @@ let searchButton = document.querySelector("#search-button");
 searchButton.addEventListener("click", handleSubmit);
 
 function searchLocation(position) {
-  let apiEndpoint = "https://api.openweathermap.org/data/2.5/weather?";
-  let latitude = position.coords.latitude;
-  let longitude = position.coords.longitude;
+  let lat = position.coords.latitude;
+  let lon = position.coords.longitude;
   let apiKey = "58d4db6a0d6b79cac80768197bced22d";
-  let units = "metric";
-  let apiUrl = `${apiEndpoint}lat=${latitude}&lon=${longitude}&appid=${apiKey}&units=${units}`;
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=imperial&appid=${apiKey}`;
 
   axios.get(apiUrl).then(displayWeatherCondition);
 }
@@ -139,27 +133,5 @@ function getCurrentLocation(event) {
 
 let currentButton = document.querySelector("#current-button");
 currentButton.addEventListener("click", getCurrentLocation);
-
-function displayFahrenheitTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round((celsiusTemperature * 9) / 5 + 32);
-  celsiusLink.classList.remove("active");
-  fahrenheitLink.classList.add("active");
-}
-
-let fahrenheitLink = document.querySelector("#fahrenheit-link");
-fahrenheitLink.addEventListener("click", displayFahrenheitTemperature);
-
-function displayCelsiusTemperature(event) {
-  event.preventDefault();
-  let temperatureElement = document.querySelector("#temperature");
-  temperatureElement.innerHTML = Math.round(celsiusTemperature);
-  celsiusLink.classList.add("active");
-  fahrenheitLink.classList.remove("active");
-}
-
-let celsiusLink = document.querySelector("#celsius-link");
-celsiusLink.addEventListener("click", displayCelsiusTemperature);
 
 searchCity("Chicago");

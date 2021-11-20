@@ -8,7 +8,11 @@ h2 {
   font-size: 25px;
   font-weight: normal;
   text-align: center;
-  margin-bottom: 35px;
+  margin-bottom: 30px;
+}
+
+body {
+  background-color: lavender;
 }
 
 ul {
@@ -17,10 +21,10 @@ ul {
 }
 
 li {
-  margin-bottom: 20px;
+  font-size: 15px;
   list-style: none;
   line-height: 8px;
-  font-size: 15px;
+  margin-bottom: 20px;
 }
 
 li:first-letter {
@@ -34,11 +38,22 @@ footer {
 }
 
 .container {
-  border: 1px solid #a5a5a5;
   padding: 20px;
   max-width: 600px;
   margin: 25px auto 10px;
   border-radius: 15px;
+  background-color: white;
+  border: none;
+}
+
+#city-input,
+#search-button,
+#current-button {
+  background-color: lavender;
+  color: black;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 10px;
 }
 
 .col-8 {
@@ -55,29 +70,16 @@ footer {
 .temperature {
   margin: 0;
   padding: 0;
-  font-size: 80px;
+  font-size: 72px;
   line-height: 57px;
 }
 
-.units {
+.unit {
   margin: 0;
   padding: 0;
   position: relative;
-  top: -45px;
-}
-
-.active {
-  color: black;
-  cursor: default;
-  text-decoration-line: none;
-}
-
-#celsius-link {
-  text-decoration-line: none;
-}
-
-#fahrenheit-link {
-  text-decoration-line: none;
+  top: -33px;
+  font-size: 25px;
 }
 
 .weather-forecast {
@@ -95,4 +97,8 @@ footer {
 
 .weather-forecast-temperature-min {
   opacity: 0.8;
+}
+
+.footer {
+  text-decoration: none;
 }

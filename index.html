@@ -34,7 +34,7 @@
               <input
                 type="submit"
                 value="Search"
-                class="btn btn-primary shadow-sn"
+                class="btn shadow-sn"
                 id="search-button"
               />
             </div>
@@ -42,7 +42,7 @@
               <input
                 type="submit"
                 value="Current"
-                class="btn btn-success shadow-sn"
+                class="btn shadow-sn"
                 id="current-button"
               />
             </div>
@@ -58,18 +58,14 @@
           <div class="col-8">
             <img src="" alt="Clear" class="icon" id="icon" />
             <span class="temperature" id="temperature"></span>
-            <span class="units">
-              <a href="#" id="celsius-link" class="active">°C</a>
-              |
-              <a href="#" id="fahrenheit-link">°F</a>
-            </span>
+            <span class="unit">°F</span>
           </div>
 
           <div class="col-4">
             <ul>
               <li id="description"></li>
               <li>Humidity: <span id="humidity"></span>%</li>
-              <li>Wind: <span id="wind"></span> km/h</li>
+              <li>Wind: <span id="wind"></span> mph</li>
             </ul>
           </div>
         </div>
@@ -80,7 +76,10 @@
     <script src="src/script.js"></script>
   </body>
   <footer>
-    <a href="https://github.com/JanaZorigt/jana-weather-app.git" target="_blank"
+    <a
+      href="https://github.com/JanaZorigt/jana-weather-app.git"
+      target="_blank"
+      class="footer"
       >Open-source code</a
     >
     by Jana Zorigt
